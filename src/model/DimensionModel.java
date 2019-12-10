@@ -1,8 +1,8 @@
 package model;
 
 public class DimensionModel {
-	int width;
-	int height;
+	private int width;
+	private int height;
 	
 	public int getWidth() {
 		return this.width;
