@@ -4,11 +4,11 @@ public class Zone {
 	StateZone actualState;
 	boolean explosive;
 	int danger;
-	
+
 	public Zone(StateZone state, boolean bomb, int number) {
 		setActualState(state);
 		setExplosive(bomb);
-		setDanger(number);		
+		setDanger(number);
 	}
 
 	/**
