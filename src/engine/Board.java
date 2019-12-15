@@ -3,9 +3,11 @@ package engine;
 import java.util.Random;
 
 import model.Bomb;
+import model.Coordinate;
 import model.Dimension;
 import model.StateZone;
 import model.Zone;
+import validator.ZoneValidator;
 
 public class Board {
 	Dimension dm;
@@ -13,6 +15,22 @@ public class Board {
 	StateZone state;
 	Bomb[] bomb;
 	Random random;
+
+	public Dimension getDm() {
+		return dm;
+	}
+
+	public void setDm(Dimension dm) {
+		this.dm = dm;
+	}
+
+	public Zone[][] getBoard() {
+		return board;
+	}
+
+	public void setBoard(Zone[][] board) {
+		this.board = board;
+	}
 
 	public Board(Dimension dimension) {
 		initAllZones();
@@ -38,28 +56,19 @@ public class Board {
 
 	}
 
-	private void generateBomb(int i, int j) {
+	private void generateBomb(Coordinate c) {
 		int chance = random.nextInt(99) + 1;
 
 		if (chance <= 15) {
-			board[i][j].setExplosive(true);
-			generateDanger(i,j);
+			board[c.getY()][c.getX()].setExplosive(true);
+			generateDanger(c);
 		}
 	}
 
-	public void generateDanger(int i, int j) {
-		if (board[i][j].isExplosive()) {
+	public void generateDanger(Coordinate c) {
+		if (board[c.getY()][c.getX()].isExplosive()) {
 
-			board[i + 1][j + 1].setDanger(board[i + 1][j + 1].getDanger() + 1);
-			board[i + 1][j].setDanger(board[i + 1][j].getDanger() + 1);
-			board[i + 1][j - 1].setDanger(board[i + 1][j - 1].getDanger());
-
-			board[i - 1][j + 1].setDanger(board[i - 1][j + 1].getDanger() + 1);
-			board[i - 1][j].setDanger(board[i - 1][j].getDanger() + 1);
-			board[i - 1][j - 1].setDanger(board[i - 1][j - 1].getDanger() + 1);
-
-			board[i][j + 1].setDanger(board[i][j + 1].getDanger() + 1);
-			board[i][j - 1].setDanger(board[i][j + 1].getDanger() + 1);
+			new ZoneValidator(this, c);
 
 		}
 	}
