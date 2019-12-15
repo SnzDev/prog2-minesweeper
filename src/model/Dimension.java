@@ -1,6 +1,6 @@
 package model;
 
-public class DimensionModel {
+public class Dimension {
 	private int width;
 	private int height;
 

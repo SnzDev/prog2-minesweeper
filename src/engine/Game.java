@@ -3,15 +3,15 @@ package engine;
 import java.util.Scanner;
 
 import messages.Messages;
-import model.DimensionModel;
-import model.PlayerModel;
+import model.Dimension;
+import model.Player;
 import model.StateGame;
 
 public class Game {
 	Scanner sc = new Scanner(System.in);
 	Messages phrases;
-	PlayerModel player;
-	DimensionModel dimension;
+	Player player;
+	Dimension dimension;
 	String dimensionString[];
 	StateGame state;
 	Enum<StateGame> actualState;
@@ -34,8 +34,8 @@ public class Game {
 
 	private void init() {
 		phrases = new Messages();
-		player = new PlayerModel();
-		dimension = new DimensionModel();
+		player = new Player();
+		dimension = new Dimension();
 		actualState = state.NEW_GAME;
 
 	}
