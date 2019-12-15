@@ -13,19 +13,16 @@ public class Game {
 	Player player;
 	Dimension dimension;
 	String dimensionString[];
-	StateGame state;
-	Enum<StateGame> actualState;
+	StateGame actualState;
 
 	public Game() {
 		init();
 
-		while (actualState.equals(state.NEW_GAME)) {
+		while (actualState.equals(StateGame.NEW_GAME)) {
 			startGame();
 
-			actualState = state.RUNNING;
-			do {
-
-			} while (actualState.equals(state.RUNNING));
+			new Board(dimension);
+			
 
 			System.out.println("Altura: " + dimension.getHeight());
 			System.out.println("Largura: " + dimension.getWidth());
@@ -36,7 +33,7 @@ public class Game {
 		phrases = new Messages();
 		player = new Player();
 		dimension = new Dimension();
-		actualState = state.NEW_GAME;
+		actualState = StateGame.NEW_GAME;
 
 	}
 
@@ -44,10 +41,13 @@ public class Game {
 		phrases.welcome();
 		phrases.writeName();
 		player.setName(sc.nextLine());
+		System.out.println("a");
 
 		phrases.writeDimension();
 		dimensionString = sc.nextLine().split("x");
 		dimension.setHeight(Integer.parseInt(dimensionString[0]));// Setting the height
 		dimension.setWidth(Integer.parseInt(dimensionString[1]));// Setting the width
+		
+		actualState = StateGame.RUNNING;
 	}
 }

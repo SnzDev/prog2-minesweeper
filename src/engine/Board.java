@@ -37,12 +37,15 @@ public class Board {
 	}
 
 	private void initAllZones() {
+		Coordinate tempCoordinate = new Coordinate();
 		board = new Zone[dm.getWidth() + 1][dm.getHeight() + 1];
 
 		for (int i = 1; i <= dm.getWidth(); i++) {
 			for (int j = 1; j <= dm.getHeight(); j++) {
-				board[i][j] = new Zone(state.HIDDEN, false, 0);
-				generateBomb(i, j);
+				tempCoordinate.setX(j);
+				tempCoordinate.setY(i);
+				board[tempCoordinate.getY()][tempCoordinate.getX()] = new Zone(state.HIDDEN, false, 0);
+				generateBomb(tempCoordinate);
 			}
 		}
 
