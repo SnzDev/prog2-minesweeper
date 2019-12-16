@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/messages/Messages.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/engine/RevealCommand.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/engine/ZoneValidator.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/engine/Action.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/model/StateZone.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/engine/Command.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/engine/Game.java</file>
+            <file>file:/home/snz/git/prog2-minesweeper/src/br/uespi/prog2/minesweeper/model/Zone.java</file>
+        </group>
+    </open-files>
+</project-private>
